@@ -1,4 +1,6 @@
-class Solution {
+import java.util.Arrays;
+
+public class Leet_1_ReverseString {
     public void reverseString(char[] s) {
         reverseHelper(0, s);
     }
@@ -14,18 +16,17 @@ class Solution {
         s[i] = s[s.length - 1 - i];
         s[s.length - 1 - i] = temp;
     }
-}
 
-class TestCase {
     public static void main(String[] args) {
         // prepare
         char[] testString = { 'a', 'b', 'c', 'd' };
+        char[] cpyTestString = Arrays.copyOf(testString, testString.length);
 
         // run
-        Solution sol = new Solution();
+        Leet_1_ReverseString sol = new Leet_1_ReverseString();
         sol.reverseString(testString);
 
         // print
-        System.out.println("Reverse of abcd is " + String.valueOf(testString));
+        System.out.println("Reverse of " + String.valueOf(cpyTestString) + " is " + String.valueOf(testString));
     }
 }
